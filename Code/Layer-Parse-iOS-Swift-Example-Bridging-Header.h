@@ -7,3 +7,6 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>

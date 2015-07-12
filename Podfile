@@ -6,4 +6,9 @@ target 'Layer-Parse-iOS-Swift-Example' do
   pod 'Parse', '~> 1.7.5'
   pod 'ParseUI', '~> 1.1.4'
   pod 'SVProgressHUD', '~> 1.1.3'
+
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
 end
+

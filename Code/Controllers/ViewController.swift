@@ -6,7 +6,10 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = view.center
+        view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,31 +29,31 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         let signupButtonBackgroundImage: UIImage = getImageWithColor(ATLBlueColor(), size: CGSize(width: 10.0, height: 10.0))
         
         // Create the log in view controller
-        self.logInViewController = PFLogInViewController()
-        
-        self.logInViewController.logInView!.passwordForgottenButton!.setTitleColor(ATLBlueColor(), forState: UIControlState.Normal)
-        self.logInViewController.logInView!.signUpButton!.setBackgroundImage(signupButtonBackgroundImage, forState: UIControlState.Normal)
-        self.logInViewController.logInView!.signUpButton!.backgroundColor = ATLBlueColor()
-        self.logInViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.logInViewController.fields = (PFLogInFields.UsernameAndPassword |
-                                           PFLogInFields.LogInButton |
-                                           PFLogInFields.SignUpButton |
-                                           PFLogInFields.PasswordForgotten)
-        self.logInViewController.delegate = self
-        let logoImageView: UIImageView = UIImageView(image: UIImage(named:"LayerParseLogin"))
-        logoImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        self.logInViewController.logInView!.logo = logoImageView;
-        
-        // Create the sign up view controller
-        let signUpViewController: PFSignUpViewController = PFSignUpViewController()
-        signUpViewController.signUpView!.signUpButton!.setBackgroundImage(signupButtonBackgroundImage, forState: UIControlState.Normal)
-        self.logInViewController.signUpController = signUpViewController
-        signUpViewController.delegate = self
-        let signupImageView: UIImageView = UIImageView(image: UIImage(named:"LayerParseLogin"))
-        signupImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        signUpViewController.signUpView!.logo = signupImageView
-
-        self.presentViewController(self.logInViewController,  animated: true, completion:nil)
+//        self.logInViewController = PFLogInViewController()
+//        
+//        self.logInViewController.logInView!.passwordForgottenButton!.setTitleColor(ATLBlueColor(), forState: UIControlState.Normal)
+//        self.logInViewController.logInView!.signUpButton!.setBackgroundImage(signupButtonBackgroundImage, forState: UIControlState.Normal)
+//        self.logInViewController.logInView!.signUpButton!.backgroundColor = ATLBlueColor()
+//        self.logInViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+//        self.logInViewController.fields = (PFLogInFields.UsernameAndPassword |
+//                                           PFLogInFields.LogInButton |
+//                                           PFLogInFields.SignUpButton |
+//                                           PFLogInFields.PasswordForgotten)
+//        self.logInViewController.delegate = self
+//        let logoImageView: UIImageView = UIImageView(image: UIImage(named:"LayerParseLogin"))
+//        logoImageView.contentMode = UIViewContentMode.ScaleAspectFit
+//        self.logInViewController.logInView!.logo = logoImageView;
+//        
+//        // Create the sign up view controller
+//        let signUpViewController: PFSignUpViewController = PFSignUpViewController()
+//        signUpViewController.signUpView!.signUpButton!.setBackgroundImage(signupButtonBackgroundImage, forState: UIControlState.Normal)
+//        self.logInViewController.signUpController = signUpViewController
+//        signUpViewController.delegate = self
+//        let signupImageView: UIImageView = UIImageView(image: UIImage(named:"LayerParseLogin"))
+//        signupImageView.contentMode = UIViewContentMode.ScaleAspectFit
+//        signUpViewController.signUpView!.logo = signupImageView
+//
+//        self.presentViewController(self.logInViewController,  animated: true, completion:nil)
     }
 
     // MARK - PFLogInViewControllerDelegate
